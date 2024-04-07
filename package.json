@@ -1,0 +1,22 @@
+{
+  "name": "techdegree-build_sql_library_manager-brandon_durand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "sequelize": "^6.37.2",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7"
+  }
+}

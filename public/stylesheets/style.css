@@ -1,0 +1,47 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none !important;
+}
+
+h1{
+  font-family: Lobster, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+p {
+  font-family: cursive;
+}
+
+label[class*='rounded']{
+  color: white;
+}
+
+.btn-info{
+  background: lightgray !important;
+  border-color: lightgray !important;
+}
+
+#bg-lightgray{
+  background: lightgray !important;
+}
+
+tr{
+  height: 2.5em !important;
+}
+
+td a:hover{
+  font-size: 1.05em;
+  color: #198754 !important;
+}
+
+#th{
+  border-color: #198754 !important;
+}
+
+label{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

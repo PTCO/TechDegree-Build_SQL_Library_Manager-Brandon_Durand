@@ -1,0 +1,27 @@
+extends layout.pug 
+
+block content 
+    h1.display-1.border-bottom.border-3.mb-4 New Book
+    if errors
+        .error-container 
+            h2.text-danger Oooops!
+            each error in errors 
+                p.border.border-2.border-danger.rounded.w-25.p-1= error.message
+                    i.fa-solid.fa-circle-exclamation.ms-1.text-danger
+    form(action="/books/new", method="post").form.fs-2.w-75
+      p.d-flex.align-items-center.justify-content-between
+        label(for='title').bg-success.p-2.rounded Title
+        input#title(name='title', type='text').form-control.w-50
+      p.d-flex.align-items-center.justify-content-between
+        label(for='author').bg-success.p-2.rounded Author
+        input#author(name='author', type='text').form-control.w-50
+      p.d-flex.align-items-center.justify-content-between
+        label(for='genre').bg-success.p-2.rounded Genre
+        input#genre(name='genre', type='text').form-control.w-50
+      p.d-flex.align-items-center.justify-content-between
+        label(for='year').bg-success.p-2.rounded Year
+        input#year(name='year', type='text').form-control.w-50
+      p.d-flex.align-items-center.w-50.ms-auto
+        input(type='submit', value='Create New Book').btn.btn-dark.w-50
+      p.d-flex.align-items-center.w-50.ms-auto
+        a.button.btn.btn-info(href='/') Cancel

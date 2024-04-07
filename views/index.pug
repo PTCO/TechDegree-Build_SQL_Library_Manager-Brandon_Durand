@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  html
+    head
+    body
+    h2= search
+      h1 Books
+      .d-flex.align-items-center.w-100
+        p.m-0
+          a.button(href='/books/new').btn.btn-success.m-0 Create New Book
+        form(action="/books/search/page/1", method="post").ms-4.form.d-flex.align-items-center
+            input(type="text", id="search", name="search").form-control.me-2.border-success
+            label(for="search" onclick="this.form.submit()").form-label.fs-6.m-0.btn.btn-dark.me-2 FILTER
+        a(href="/books").fs-6.m-0.btn.btn-info CLEAR
+
+      table.table.table-hover
+        thead
+          tr.bg-dark.text-white
+            th#th.border-0.border-bottom.border-3 Title
+            th#th.border-0.border-bottom.border-3 Author
+            th#th.border-0.border-bottom.border-3 Genre
+            th#th.border-0.border-bottom.border-3 Year
+        tbody
+          each book in books
+            tr
+              td
+                a(href='/books/' + book.id)#bg-lightgray.bg-dark.rounded.text-black.p-1= book.title
+              td= book.author
+              td= book.genre
+              td= book.year
+      .d-flex.align-items-center.justify-content-evenly 
+        each button, index in pagination
+          a(href=result ? `/books/search/page/${index + 1}`:`/books/page/${index + 1}`).btn.btn-dark=index + 1

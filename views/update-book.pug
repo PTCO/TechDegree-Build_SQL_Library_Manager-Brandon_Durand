@@ -1,0 +1,30 @@
+extends layout.pug 
+
+block content 
+    h1.display-1.border-bottom.border-3.mb-4 Update Book
+    if errors
+        .error-container 
+            h2.text-danger Oooops!
+            each error in errors 
+                p.border.border-2.border-danger.rounded.w-25.p-1= error.message
+                    i.fa-solid.fa-circle-exclamation.ms-1.text-danger
+    form(action="/books/" + book.id, method="post").form.fs-2.w-100 
+      p.d-flex.align-items-center.justify-content-between
+        label(for='title').bg-success.p-2.rounded Title
+        input#title(name='title', type='text', value= book.title).form-control.w-50
+      p.d-flex.align-items-center.justify-content-between
+        label(for='author').bg-success.p-2.rounded Author
+        input#author(name='author', type='text', value= book.author).form-control.w-50
+      p.d-flex.align-items-center.justify-content-between
+        label(for='genre').bg-success.p-2.rounded Genre
+        input#genre(name='genre', type='text', value= book.genre).form-control.w-50
+      p.d-flex.align-items-center.justify-content-between
+        label(for='year').bg-success.p-2.rounded Year
+        input#year(name='year', type='text', value= book.year).form-control.w-50
+      p.d-flex.align-items-center.w-50.ms-auto
+        input(type='submit', value='Update Book').btn.btn-dark.w-50
+    form(method='post', action='/books/' + book.id + '/delete', onsubmit="return confirm('Do you really want to delete this book?');").w-50.ms-auto
+      p.d-flex.align-items-center.w-50
+        a.button.btn.btn-info.w-50(href='/books/') Cancel
+      p.d-flex.align-items-center.w-50
+        input(type='submit', value='Delete Book').btn.btn-danger
