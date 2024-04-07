@@ -13,8 +13,6 @@ const { sequelize } = require('./models');
 )()
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const { error } = require('console');
 
 var app = express();
 
